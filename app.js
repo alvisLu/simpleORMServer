@@ -18,6 +18,13 @@ app.get('/', (req, res) => {
   res.send('index');
 });
 
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
+
 app.use(require('./routes/teachers'));
 
 const PORT = process.env.PORT || 5000;
