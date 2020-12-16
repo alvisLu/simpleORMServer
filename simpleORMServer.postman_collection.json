@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "fe7712ec-759f-4d3b-b9c7-2ef2088b6f5e",
+		"name": "simpleORMServer",
+		"description": "simpleORMServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get teachers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{simpleORMHost}}:5000/teachers",
+					"host": [
+						"{{simpleORMHost}}"
+					],
+					"port": "5000",
+					"path": [
+						"teachers"
+					]
+				},
+				"description": "get teachers"
+			},
+			"response": []
+		},
+		{
+			"name": "getTeacherById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{simpleORMHost}}:5000/teachers/:id",
+					"host": [
+						"{{simpleORMHost}}"
+					],
+					"port": "5000",
+					"path": [
+						"teachers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "get teacher by id\n\nparams: \nid {String} id of the user"
+			},
+			"response": []
+		},
+		{
+			"name": "createTeacher",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Alvis\",\n    \"last_name\": \"Lu\",\n    \"school\": \"ntu\",\n    \"hire_date\": \"2020-12-01\",\n    \"salary\": \"80000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{simpleORMHost}}:5000/teacher",
+					"host": [
+						"{{simpleORMHost}}"
+					],
+					"port": "5000",
+					"path": [
+						"teacher"
+					]
+				},
+				"description": "create teacher\n\nrequest body: \nfirst_name {String} first name of teacher, \nlast_name {String} last name of teacher,\nschool {String} school of teacher,\nhire_date {String} hire date,\nsalary {Int} salary of teacher"
+			},
+			"response": []
+		},
+		{
+			"name": "updateTeacherById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"salary\": \"120000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{simpleORMHost}}:5000/teacher/:id",
+					"host": [
+						"{{simpleORMHost}}"
+					],
+					"port": "5000",
+					"path": [
+						"teacher",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "modify teacher by id\n\nparams:\nid: {Int} id of teacher\n\nrequest body: \nfirst_name {String} first name of teacher, \nlast_name {String} last name of teacher,\nschool {String} school of teacher,\nhire_date {String} hire date,\nsalary {Int} salary of teacher"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
