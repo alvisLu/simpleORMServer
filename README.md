@@ -14,23 +14,23 @@ stop and remove containers: docker-compose down
 
 ```
 
-### Development
-## Install app
+## Development
+### Install app
 ```
 npm install or yarn
 ```
 
-## Start app
+### Start app
 ```
 npm run start
 ```
 
-## Run development
+### Run development
 ```
 npm run dev
 ```
 
-### API Document
+## API Document
 
 [./simpleORMServer.postman_collection.json](https://github.com/alvisLu/simpleORMServer/blob/master/simpleORMServer.postman_collection.json)
 
