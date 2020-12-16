@@ -19,4 +19,5 @@ const Teacher = db.define('teacher', {
   },
 });
 
+Teacher.sync({ force: true });
 module.exports = Teacher;
