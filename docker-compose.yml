@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASS: postgres
+      POSTGRES_DB: db
+    ports:
+      - 5433:5432
+    volumes:
+      - ~/dbdata:/var/lib/postgresql/data
+  web:
+    build:
+        dockerfile: ./Dockerfile
+    depends_on:
+      - db
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app
